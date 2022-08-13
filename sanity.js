@@ -1,8 +1,8 @@
 import {createClient, createCurrentUserHook} from 'next-sanity'
 import createImageUrlBuilder from '@sanity/image-url'
-import {ClientConfig} from "@sanity/client";
 
-export const config: ClientConfig = {
+
+export const config = {
     /**
      * Find your project ID and dataset in `sanity.json` in your studio project.
      * These are considered “public”, but you can use environment variables
@@ -12,6 +12,7 @@ export const config: ClientConfig = {
      **/
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+    token: process.env.SANITY_API_TOKEN,
     apiVersion: '2021-10-21', // Learn more: https://www.sanity.io/docs/api-versioning
     /**
      * Set useCdn to `false` if your application require the freshest possible
